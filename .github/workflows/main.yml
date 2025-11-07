@@ -1,22 +1,31 @@
 name: My Test Pipeline
 
-on: [push] # The trigger [2]
+on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # The free virtual machine [5]
+    runs-on: ubuntu-latest
     steps:
+      # STEP 1: This downloads your code (including requirements.txt)
       - name: 1. Check out code
         uses: actions/checkout@v3
 
+      # (DEBUG) This step will print all the files in your directory
+      # You can use this to confirm requirements.txt was checked out.
+      - name: (DEBUG) List files in directory
+        run: ls -l
+
+      # STEP 2: This sets up the Python language
       - name: 2. Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.10'
 
+      # STEP 3: This will now find and install your requirements
       - name: 3. Install dependencies
         run: pip install -r requirements.txt
 
+      # STEP 4: This will now run your tests
       - name: 4. Run tests
-        run: pytest [3, 4]
+        run: pytest
 
