@@ -1,2 +1,3 @@
 def add(x, y):
-  return x + y
+# <-- This is the bug
+  return x * y 
