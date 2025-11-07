@@ -18,7 +18,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 4. Execute the Notebook (The "CT" Step)
-        run: jupyter nbconvert --execute --to notebook --inplace train.ipynb [9, 10, 11]
+        run: jupyter nbconvert --execute --to notebook --inplace train.ipynb
 
       - name: 5. Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
