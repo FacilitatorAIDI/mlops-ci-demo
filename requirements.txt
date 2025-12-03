@@ -1,5 +1,2 @@
-notebook
-nbconvert
-scikit-learn
-pandas
+Pytest
 
